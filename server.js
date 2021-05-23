@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const cors = require('cors');
+// const cors = require('cors');
 const PORT=process.env.PORT || 3000;
 
 app.use(express.static('public'));  //for css
@@ -11,11 +11,11 @@ const connectDB = require('./config/db');
 connectDB();
 
 
-const corsOptions={
-    origin: process.env.ALLOWED_CLIENTS.split(',')
-}
+// const corsOptions={
+//     origin: process.env.ALLOWED_CLIENTS.split(',')
+// }
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 //Template engine
 app.set('views',path.join(__dirname,'/views')); //for ejs
 app.set('view engine','ejs');
